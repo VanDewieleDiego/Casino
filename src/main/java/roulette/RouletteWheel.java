@@ -26,22 +26,30 @@ public class RouletteWheel {
         for (String number: listInArray) {
             teller++;
             if (number.equals("0") || number.equals("00")){
-                numbers.add(new RouletteNumber(Integer.parseInt(number), RouletteNumber.RouletteColor.GREEN));
+                numbers.add(new RouletteNumber(number, RouletteNumber.RouletteColor.GREEN));
             }else if (teller%2 == 0){
-                numbers.add(new RouletteNumber(Integer.parseInt(number), RouletteNumber.RouletteColor.RED));
+                numbers.add(new RouletteNumber(number, RouletteNumber.RouletteColor.RED));
             }else {
-                numbers.add(new RouletteNumber(Integer.parseInt(number), RouletteNumber.RouletteColor.BLACK));
+                numbers.add(new RouletteNumber(number, RouletteNumber.RouletteColor.BLACK));
             }
         }
         return numbers;
     }
-    public RouletteNumber getNumber(int number){
+    public RouletteNumber getNumber(String number){
+
         for (RouletteNumber nr : wheelnumbers){
-            if (nr.getNumber() == number){
+            if (nr.getNumber().equals(number)){
                 return nr;
             }
         }
         return null;
+    }
+    public RouletteNumber getNumberWithIndex(int index){
+        return wheelnumbers.get(index);
+    }
+
+    public int getLength(){
+        return wheelnumbers.size();
     }
 
     @Override

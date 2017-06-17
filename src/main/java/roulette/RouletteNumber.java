@@ -7,16 +7,16 @@ public class RouletteNumber {
         GREEN
     }
 
-    private final int number;
+    private final String number;
     private final RouletteColor color;
 
 
-    public RouletteNumber(int number, RouletteColor color){
+    public RouletteNumber(String number, RouletteColor color){
         this.number = number;
         this.color = color;
     }
 
-    public int getNumber(){
+    public String getNumber(){
         return number;
     }
     public RouletteColor getColor(){

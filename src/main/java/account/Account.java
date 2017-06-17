@@ -35,4 +35,8 @@ public class Account {
             System.out.println("You have bet " + amount + ". Your balance is now "+balance);
         }
     }
+    public void addWin(int amount){
+        this.balance += amount;
+        System.out.println("You won " + amount + ". Your balance is now "+balance);
+    }
 }
